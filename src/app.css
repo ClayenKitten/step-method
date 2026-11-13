@@ -1,0 +1,138 @@
+/*
+ * Shared base styles for every page (description and interactive tool),
+ * so both pages stay consistent without duplicating CSS.
+ */
+
+body {
+	font-family:
+		system-ui,
+		-apple-system,
+		'Segoe UI',
+		Roboto,
+		sans-serif;
+	line-height: 1.55;
+	color: #1f2328;
+	background: #f6f7f9;
+	max-width: 62rem;
+	margin: 0 auto;
+	padding: 2rem 1.25rem 5rem;
+}
+
+h1 {
+	font-size: 1.6rem;
+	margin: 0 0 0.5rem;
+}
+
+h2 {
+	font-size: 1.25rem;
+	margin: 2rem 0 0.5rem;
+	padding-bottom: 0.25rem;
+	border-bottom: 1px solid #e2e4e8;
+}
+
+h3 {
+	font-size: 1.05rem;
+	margin: 1.25rem 0 0.5rem;
+}
+
+section {
+	margin-bottom: 1rem;
+}
+
+p {
+	margin: 0.5rem 0;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 0.75rem 0;
+	font-size: 0.95rem;
+	background: #fff;
+}
+
+th,
+td {
+	border: 1px solid #e2e4e8;
+	padding: 0.4rem 0.6rem;
+	text-align: center;
+}
+
+th {
+	background: #eef0f3;
+	font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+	background: #fafbfc;
+}
+
+input,
+select {
+	font: inherit;
+	padding: 0.3rem 0.45rem;
+	border: 1px solid #c9ccd1;
+	border-radius: 4px;
+	background: #fff;
+}
+
+input:focus,
+select:focus {
+	outline: 2px solid #7aa7ff;
+	outline-offset: 1px;
+}
+
+input:disabled,
+select:disabled {
+	background: #f1f2f4;
+	color: #6b7280;
+}
+
+input[type='number'] {
+	width: 5rem;
+}
+
+th input {
+	width: 6rem;
+	text-align: center;
+}
+
+button {
+	font: inherit;
+	padding: 0.35rem 0.8rem;
+	margin: 0.15rem 0.25rem 0.15rem 0;
+	border: 1px solid #c9ccd1;
+	border-radius: 4px;
+	background: #fff;
+	cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+	background: #eef0f3;
+}
+
+button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+label {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+}
+
+.hint {
+	color: #6b7280;
+	font-size: 0.88rem;
+}
+
+.equations {
+	font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+	background: #fff;
+	border: 1px solid #e2e4e8;
+	border-radius: 4px;
+	padding: 0.75rem 1rem;
+	margin: 0.5rem 0;
+	line-height: 1.7;
+}
