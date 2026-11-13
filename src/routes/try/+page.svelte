@@ -1,6 +1,7 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { replaceState } from '$app/navigation';
-	import { browser } from '$app/environment';
+	import { browser } from '$app/env';
 	import { page } from '$app/state';
 	import { untrack } from 'svelte';
 	import { satisfactionPercent, type Constraint, type Objective } from '#lib/stem.js';
@@ -24,9 +25,7 @@
 	// string, so the server renders the empty form and hydration applies the
 	// parameters from the real address.
 	// ---------------------------------------------------------------------------
-	const parsed = browser
-		? parseTaskParams(window.location.search)
-		: { task: null, invalid: false };
+	const parsed = browser ? parseTaskParams(window.location.search) : { task: null, invalid: false };
 	const initial = parsed.task ?? emptyTask();
 
 	let numVars = $state(initial.numVars);
@@ -200,7 +199,7 @@
 	}
 </script>
 
-<p class="back"><a href="/">← К описанию метода</a></p>
+<p class="back"><a href={resolve('/')}>← К описанию метода</a></p>
 
 <h1>Решение задачи методом STEM</h1>
 

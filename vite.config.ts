@@ -2,7 +2,7 @@ import adapter from '@sveltejs/adapter-static';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
 	plugins: [
 		sveltekit({
 			compilerOptions: {
@@ -12,7 +12,13 @@ export default defineConfig({
 			},
 
 			// Static hosting: all pages are prerendered (see src/routes/+layout.ts).
-			adapter: adapter()
+			adapter: adapter(),
+
+			// GitHub Pages serves the site from /<repo>/, so all asset and route
+			// URLs need the prefix. The dev server stays at the domain root.
+			paths: {
+				base: command === 'serve' ? '' : '/step-method'
+			}
 		})
 	]
-});
+}));

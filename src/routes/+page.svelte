@@ -1,3 +1,7 @@
+<script lang="ts">
+	import { asset, resolve } from '$app/paths';
+</script>
+
 <h1>Метод STEM — многокритериальное линейное программирование</h1>
 
 <section class="description">
@@ -14,7 +18,7 @@
 
 	<ol>
 		<li>
-			<strong>Фаза 1. Таблица значений критериев.</strong> Каждый критерий z<sub>i</sub>
+			<strong>Таблица значений критериев.</strong> Каждый критерий z<sub>i</sub>
 			оптимизируется по отдельности на допустимом множестве задачи. Получается k планов — по одному на
 			каждый критерий; значения всех критериев в этих планах образуют таблицу. Из неё берутся:
 			<ul>
@@ -32,7 +36,7 @@
 			</ul>
 		</li>
 		<li>
-			<strong>Фаза 2. Минимаксная задача.</strong> Решается задача линейного программирования:
+			<strong>Минимаксная задача.</strong> Решается задача линейного программирования:
 			<div class="equations">
 				<div>min λ</div>
 				<div>
@@ -66,7 +70,7 @@
 	<div class="paper-link">
 		📄 Оригинальная статья: R. Benayoun, J. de Montgolfier, J. Tergny, O. Laritchev. «Linear
 		programming with multiple objective functions: Step Method (STEM)». Operations Research, 1971 — <a
-			href="/benayoun1971.pdf"
+			href={asset('benayoun1971.pdf')}
 			target="_blank"
 			rel="noopener">открыть PDF</a
 		>
@@ -74,7 +78,7 @@
 </section>
 
 <div class="cta">
-	<a class="cta-button" href="/try">Попробовать</a>
+	<a class="cta-button" href={resolve('/try')}>Попробовать</a>
 	<p class="hint">
 		Задайте свою задачу и пройдите все шаги метода: от таблицы значений критериев до компромиссного
 		решения.
